@@ -1,3 +1,5 @@
+import 'package:elephants_app/components/loader_component.dart';
+import 'package:elephants_app/screens/elephants_screen.dart';
 import 'package:flutter/material.dart';
 
 class BeginningScreen extends StatefulWidget {
@@ -8,18 +10,27 @@ class BeginningScreen extends StatefulWidget {
 }
 
 class _BeginningScreenState extends State<BeginningScreen> {
+  bool _showLoader = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          _showLogo(),
-          _showButton(),
-        ],
-      )),
-    );
+        body: Stack(
+      children: <Widget>[
+        Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _showLogo(),
+            _showButton(),
+          ],
+        )),
+        _showLoader
+            ? LoaderComponent(
+                text: 'Por favor espere',
+              )
+            : Container(),
+      ],
+    ));
   }
 
   Widget _showLogo() {
@@ -37,7 +48,7 @@ class _BeginningScreenState extends State<BeginningScreen> {
         children: <Widget>[
           Expanded(
             child: ElevatedButton(
-              onPressed: () => _login(),
+              onPressed: () => _showElephants(),
               child: Text('Ver Elefantes'),
               style: ButtonStyle(backgroundColor:
                   MaterialStateProperty.resolveWith<Color>(
@@ -52,5 +63,14 @@ class _BeginningScreenState extends State<BeginningScreen> {
     );
   }
 
-  _login() {}
+  void _showElephants() {
+    setState(() {
+      _showLoader = true;
+    });
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ElephantsScreen()));
+    setState(() {
+      _showLoader = false;
+    });
+  }
 }
