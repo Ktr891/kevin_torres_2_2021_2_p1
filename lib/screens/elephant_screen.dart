@@ -43,6 +43,7 @@ class _ElephantScreenState extends State<ElephantScreen> {
               children: <Widget>[
                 _showLogo(),
                 _showInformation(),
+                _showInformation2()
               ],
             )),
           ],
@@ -73,153 +74,176 @@ class _ElephantScreenState extends State<ElephantScreen> {
     return Card(
       child: InkWell(
         onTap: () {},
-        child: Container(
-          padding: EdgeInsets.all(10),
-          margin: EdgeInsets.all(10),
-          child: Column(
-            children: [
-              Row(
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Nombre:       ' + _name,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Afiliacion:     ' + _affiliation,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Especie:        ' + _species,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Sexo:             ' + _sex,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Ficticio:         ' + _fictional,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'dob:               ' + _dob,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'dod:               ' + _dod,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _showInformation2() {
+    return Card(
+      child: InkWell(
+        onTap: () {},
+        child: Center(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              child: Column(
                 children: [
-                  Column(
+                  Row(
                     children: [
-                      Text(
-                        'Nombre:       ' + _name,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
+                      Column(
+                        children: [
+                          Text(
+                            'Link: ' + _wikilink,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ],
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Afiliacion:     ' + _affiliation,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
+                  SizedBox(
+                    height: 10,
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
+                  Row(
                     children: [
-                      Text(
-                        'Especie:        ' + _species,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
+                      Column(
+                        children: [
+                          Text(
+                            'Nota: ' + _note,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ],
-                  ),
+                  )
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Sexo:             ' + _sex,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Ficticio:         ' + _fictional,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'dob:               ' + _dob,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'dod:               ' + _dod,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Ling: ' + _wikilink,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Nota: ' + _note,
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ],
-              )
-            ],
+            ),
           ),
         ),
       ),
